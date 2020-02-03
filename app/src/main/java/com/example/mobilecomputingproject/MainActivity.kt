@@ -12,13 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         var fabOpened = false
 
-        button_time.setOnClickListener{
-            startActivity(Intent(applicationContext, TimeActivity::class.java))
-        }
 
-        button_map.setOnClickListener{
-            startActivity(Intent(applicationContext, MapActivity::class.java))
-        }
 
 
 
@@ -41,6 +35,13 @@ class MainActivity : AppCompatActivity() {
         fab_map.setOnClickListener{
             startActivity(Intent(applicationContext, MapActivity::class.java))
         }
+
+
+
+        val reminderAdapter = ReminderAdapter(applicationContext, data)
+        list.adapter = reminderAdapter
+
+
 
     }
 }
